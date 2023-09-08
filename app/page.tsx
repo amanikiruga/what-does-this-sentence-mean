@@ -10,6 +10,7 @@ export default function Home() {
     const [sentence, setSentence] = useState("");
     const [isButtonClicked, setIsButtonClicked] = useState(false);
     const [isButtonLoading, setIsButtonLoading] = useState(false);
+    const [submittedAtLeastOnce, setSubmittedAtLeastOnce] = useState(false);
     const [sentencesWithDefinitions, setSentencesWithDefinitions] = useState<
         JSX.Element[]
     >([]);
@@ -49,6 +50,7 @@ export default function Home() {
         });
         const data = await response.json();
         setIsButtonLoading(false);
+        if (!submittedAtLeastOnce) setSubmittedAtLeastOnce(true);
         console.log("data", data);
         try {
             const meaningsAndDefinitions = JSON.parse(data.response);
@@ -136,10 +138,11 @@ export default function Home() {
                 />
                 <Output
                     sentencesWithDefinitions={sentencesWithDefinitions}
+                    submittedAtLeastOnce={submittedAtLeastOnce}
                     meaning={meaning}
                     error={error}
                 />
-                <Footer />
+                <Footer submittedAtLeastOnce={submittedAtLeastOnce} />
             </div>
         </div>
     );

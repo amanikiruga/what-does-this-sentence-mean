@@ -1,7 +1,11 @@
 import lottie from "lottie-web";
 import { use, RefObject, useEffect, useRef } from "react";
 
-export default function Footer() {
+export default function Footer({
+    submittedAtLeastOnce,
+}: {
+    submittedAtLeastOnce: boolean;
+}) {
     //useRef
     const lottieRef = useRef<Element>() as RefObject<HTMLDivElement>;
     useEffect(() => {
@@ -16,7 +20,11 @@ export default function Footer() {
         });
     }, []);
     return (
-        <div className="flex flex-col items-center justify-center bg-gray-100 p-6 rounded-lg shadow-lg mt-4">
+        <div
+            className={`flex flex-col items-center justify-center bg-gray-100 p-6 rounded-lg shadow-lg mt-4 transition-opacity ease-in duration-1000 ${
+                submittedAtLeastOnce ? "opacity-100" : "opacity-0"
+            }`}
+        >
             <h2 className="text-xl  mb-4">
                 {" "}
                 Made with ❤️ by{" "}
