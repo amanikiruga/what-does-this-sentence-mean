@@ -21,7 +21,7 @@ export default function Footer({
     }, []);
     return (
         <div
-            className={`flex flex-col items-center justify-center bg-gray-100 p-6 rounded-lg shadow-[2px_2px_2px_2px_rgba(0,0,0,0.1)] mt-4 transition-opacity ease-in duration-1000 ${
+            className={`flex flex-col items-center justify-center bg-gray-100 p-6 rounded-lg shadow-[1px_2px_2px_2px_rgba(0,0,0,0.1)] mt-4 transition-opacity ease-in duration-1000 ${
                 submittedAtLeastOnce ? "opacity-100" : "opacity-0"
             }`}
         >
