@@ -11,7 +11,7 @@ export default function Output({
 }) {
     return (
         <div
-            className={`bg-gray-100 p-6 rounded-lg shadow-lg mt-4 transition-opacity ease-in duration-700 ${
+            className={`bg-gray-100 p-6 rounded-lg shadow-[2px_2px_2px_2px_rgba(0,0,0,0.1)] mt-4 transition-opacity ease-in duration-700 ${
                 submittedAtLeastOnce ? "opacity-100" : "opacity-0"
             }`}
         >
