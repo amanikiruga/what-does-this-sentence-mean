@@ -125,8 +125,8 @@ export default function Home() {
                     What Does This Sentence Mean?
                 </h1>
                 <p className="text-xl text-center mb-8">
-                    A simple tool to get the literal meaning of any sentence in
-                    context
+                    A simple tool to get a word-by-word definition of any
+                    sentence
                 </p>
                 <SentenceInput
                     sentence={sentence}
